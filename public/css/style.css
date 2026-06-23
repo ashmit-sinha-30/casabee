@@ -27,34 +27,27 @@ body{
     color: #222222 !important;
 }
 
-.f-info-links a{
-    text-decoration: none;
-    color: #222222;
-}
-
-.f-info-links a:hover{
-    text-decoration: underline;
-}
-
-.f-info-links,.f-info-socials,.f-info-brand{
+.f-info-socials,.f-info-brand{
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .f-info-socials i{
     font-size: 1.2rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 .f-info{
-    height: 8rem;
-    background-color: #ebebeb;
+    height: 5rem;
+    background-color: #f7f7f7;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: space-evenly;
+    align-items: center;
     text-align: center;
 }
 
@@ -201,6 +194,7 @@ body{
 .reserve-book{
     background-color: #fe424d;
     color: white;
+    border: none !important;
 }
 .reserve-book:hover{
     cursor: pointer;
@@ -398,6 +392,11 @@ body{
 
     .tax-toggle{
         margin-left: 0rem;
+    }
+
+    .flashMob{
+        width: 100%;
+        margin-left: 0;
     }
 
 }

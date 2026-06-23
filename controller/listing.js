@@ -192,4 +192,17 @@ module.exports.rendertrips = async(req,res)=>{
         console.log(e.message);
         res.redirect("/listings");
     }
-}
+};
+
+module.exports.renderHostDashboard = async(req,res)=>{
+    try{
+        const myListings = await Listing.find({owner: req.user._id});
+        const listingIds = myListings.map(listing => listing._id);
+        const reservations = await Booking.find({listing: { $in: listingIds }}).populate("listing").populate("author");
+        res.render("../views/listings/hostDashboard.ejs", { reservations });
+    }catch(e){
+        req.flash("error", "Could not load the host dashboard.");
+        res.redirect("/listings");
+        console.log(e.message);
+    }
+};
